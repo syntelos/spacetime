@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
-<project name="spacetime" default="jar">
+<project name="spacetime" default="update">
 
   <tstamp/>
 
   <property name="src"  location="${basedir}/src"/>
   <property name="tgt"  location="${basedir}/tgt"/>
   <property name="dst"  location="${basedir}"/>
+  <property name="ant"  location="${basedir}/ant"/>
   <property name="ver"  location="${basedir}/ver"/>
 
   <property name="compiler.source" value="1.5"/>
@@ -15,6 +16,15 @@
   <property name="compiler.deprecation" value="false"/>
   <property name="compiler.encoding" value="utf-8"/>
 
+  <import file="${ant}/build.in.update.xml"/>
+
+  <property file="${user.home}/update.properties"/>
+
+
+  <target name="update" depends="jar" if="spacetime.update">
+
+    <do-update src="${target.jar}" tgt="${spacetime.update}"/>
+  </target>
 
   <target name="jar" depends="compile" description="Create JAR. Dep 'compile'.">
     <delete>

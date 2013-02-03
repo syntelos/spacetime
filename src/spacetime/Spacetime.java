@@ -21,11 +21,11 @@ package spacetime;
 /**
  * Practical occupation of physical space-time 
  */
-public interface Spacetime<F extends Number>
-    extends Iterable<SpacetimeObject<F>>
+public interface Spacetime<F extends Number,S extends SpacetimeObject<F>>
+    extends Iterable<S>
 {
 
-    public SpacetimeObject get(F x, F y, F z, F t);
+    public S get(F x, F y, F z, F t);
 
-    public SpacetimeObject put(SpacetimeObject p);
+    public S put(S p);
 }

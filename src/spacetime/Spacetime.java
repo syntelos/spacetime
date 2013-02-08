@@ -25,7 +25,9 @@ public interface Spacetime<F extends Number,S extends SpacetimeObject<F>>
     extends Iterable<S>
 {
 
-    public S get(F x, F y, F z, F t);
+    public <R extends S> R get(F x, F y, F z, F t);
 
-    public S put(S p);
+    public <R extends S> R put(R p);
+
+    public <R extends S> java.lang.Iterable<R> iterable();
 }

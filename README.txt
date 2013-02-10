@@ -31,3 +31,8 @@
 
         Complex properties of Spacetime Object.
 
+
+See also
+
+  http://github.com/syntelos/spacetime-standalone
+  http://github.com/syntelos/spacetime-standalone-airfoil
